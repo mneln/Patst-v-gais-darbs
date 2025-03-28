@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="font-family: 'Georgia', serif;">
+    <!-- uzruna -->
+    <h1 class="text-center mb-3" style="color: black;">Veidoja Loreta Tropa un Māra Nulle 12.1</h1>
+    <h1 class="text-center mb-4" style="color: black;">Laipni lūgti restorānā "Baltā Pelīte"!</h1>
+    <p class="text-center" style="font-size: 18px;">Baudiet neaizmirstamu garšas pieredzi vietā, kur tradīcijas satiekas ar mūsdienīgu pieeju. Mūsu virtuve piedāvā rūpīgi izstrādātus ēdienus, kas gatavoti no augstākās kvalitātes vietējiem produktiem. Mākslinieciski noformēti ēdieni, silta atmosfēra un izcils serviss padarīs jūsu apmeklējumu par īpašu notikumu.</p>
+    
+    <!-- nedēļas not. -->
+    <h2 class="mt-5" style="color: black;">Šīs nedēļas notikumi</h2>
+    <ul class="list-group list-group-flush" style="font-size: 17px;">
+        <li class="list-group-item">📅 <strong>Otrdiena, 19:00</strong> – Vīna vakars ar someljē ieteikumiem</li>
+        <li class="list-group-item">🎹 <strong>Ceturtdiena, 20:00</strong> – Klavieru vakars ar Mārtiņu Vītolu</li>
+        <li class="list-group-item">🎤 <strong>Sestdiena, 21:00</strong> – Akustiskais vakars ar īpašo viesi</li>
+    </ul>
+    
+    <!-- nedēļas īpašie piedāvājumi -->
+    <h2 class="mt-5" style="color: black;">Šīs nedēļas īpašie piedāvājumi</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="mt-3" style="color: black;">Ēdieni</h3>
+            <ul>
+                <li>Lēni gatavota liellopa ribiņa ar medus-mārrutku mērci</li>
+                <li>Cepts asaris ar zāļu sviestu un sparģeļiem</li>
+                <li>Mājās gatavots ķirbju un rikotas ravioli</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h3 class="mt-3" style="color: black;">Dzērieni</h3>
+            <ul>
+                <li>Mājas lavandas limonāde</li>
+                <li>Sezonas kokteilis "Meža ogu sajūta"</li>
+                <li>Īpaši izmeklēts dienas vīns</li>
+            </ul>
+        </div>
+        <div class="mt-5">
+            <h2 style="color: black;">Statistika</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='images/histogram.png') }}" alt="Histogram of Zvaigznes" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='images/pie_chart.png') }}" alt="Pie Chart of Ediens" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

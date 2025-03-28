@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="font-family: 'Georgia', serif;">
+    <h1 class="mb-4" style="color: black; margin-left: 20px;">Par uzņēmumu</h1>
+    
+    <div class="row">
+        <div class="col-md-12" style="margin-left: 20px; font-size: 18px;">
+            <p>Restorāns "Baltā Pelīte" ir vieta, kur tradīcijas satiekas ar mūsdienīgu pieeju ēdiena gatavošanā. Restorāna stāsts aizsākās 2008. gadā, kad divi draugi, kulinārijas entuziasts Kārlis Ziedonis un pieredzējis restorānu vadītājs Anna Liepa, nolēma radīt vietu, kur izsmalcināta garša savijas ar mājīgu atmosfēru. Viņu mērķis bija ne tikai piedāvāt lieliskas maltītes, bet arī radīt vidi, kur katrs viesis justos kā mājās.</p>
+            <p>Gadu gaitā "Baltā Pelīte" kļuvusi par vienu no iecienītākajām vietām gardēžiem, piedāvājot ēdienus, kas balstīti uz augstas kvalitātes vietējiem produktiem un rūpīgi izstrādātām receptēm. Restorāns apvieno latviešu virtuves tradīcijas ar mūsdienīgām garšu niansēm, padarot katru ēdienreizi par īpašu pieredzi.</p>
+        </div>
+    </div>
+    
+    <h2 class="mt-5" style="color: black; margin-left: 20px;">Mūsu iedvesma</h2>
+    <p style="margin-left: 20px; font-size: 18px;">Restorāna ideja dzima no vēlmes radīt vietu, kur ēdienu baudīšana būtu pieredze visām maņām. Šeit apvienojas bērnības garšas atmiņas ar jaunām kulinārijas tehnikām. Svarīgākie elementi ir svaigi, sezonāli produkti un autentiskas receptes, kas pārsteidz ar vienkāršību un eleganci.</p>
+    
+    <h2 class="mt-5" style="color: black; margin-left: 20px;">Mūsu šefpavāri</h2>
+    <div class="row">
+        <div class="col-md-6 d-flex align-items-start" style="margin-left: 20px; font-size: 18px;">
+            <img src="{{ url_for('static', filename='images/martins.webp') }}" alt="Mārtiņš Eglītis" class="img-fluid me-3" style="width: 100px; height: auto;">
+            <div>
+                <h3 class="mt-3" style="color: black;">Mārtiņš Eglītis</h3>
+                <p>Mārtiņš ir pazīstams ar savu prasmi veidot bagātīgas garšu kombinācijas, izmantojot sezonālos Latvijas produktus. Viņa specialitāte ir gaļas ēdieni un lēni gatavotas maltītes, kas atklāj dziļas un niansētas garšas.</p>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex align-items-start" style="margin-left: 20px; font-size: 18px;">
+            <img src="{{ url_for('static', filename='images/laura.jpg') }}" alt="Laura Graudiņa" class="img-fluid me-3" style="width: 100px; height: auto;">
+            <div>
+                <h3 class="mt-3" style="color: black;">Laura Graudiņa</h3>
+                <p>Laura ir saldumu un veģetāro ēdienu meistare. Viņa īpašu uzmanību pievērš garšas balansam un produktu svaigumam, radot desertus un augu valsts ēdienus, kas pārsteidz ar vieglumu un eleganci.</p>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex align-items-start" style="margin-left: 20px; font-size: 18px;">
+            <img src="{{ url_for('static', filename='images/andrejs.webp') }}" alt="Andrejs Bērziņš" class="img-fluid me-3" style="width: 100px; height: auto;">
+            <div>
+                <h3 class="mt-3" style="color: black;">Andrejs Bērziņš</h3>
+                <p>Andrejs ir jūras velšu eksperts, kurš spēj radīt ēdienus, kas ataino Baltijas jūras bagātību. Viņa gatavotās zivju un vēžveidīgo receptes tiek slavētas par to izsmalcināto garšu un eleganto pasniegšanu.</p>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex align-items-start" style="margin-left: 20px; font-size: 18px;">
+            <img src="{{ url_for('static', filename='images/zane.jpg') }}" alt="Zane Kalniņa" class="img-fluid me-3" style="width: 100px; height: auto;">
+            <div>
+                <h3 class="mt-3" style="color: black;">Zane Kalniņa</h3>
+                <p>Zane ir pazīstama ar savu meistarību konditorejā, kur viņa rada neparastus desertus, kas pārsteidz gan vizuāli, gan garšas ziņā. Viņas kūkas un smalkmaizītes ir kļuvušas par restorāna vizītkarti.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

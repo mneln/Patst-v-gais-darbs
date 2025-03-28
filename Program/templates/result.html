@@ -1,0 +1,176 @@
+{% extends "layout.html" %}
+{% block title %}
+Rezultāti
+{% endblock %}
+{% block content %}
+<h2>Atsauksmes</h2>
+
+<!-- filtri zvaigznem -->
+<div>
+    <label>
+        <input type="radio" name="tableToggle" value="all" checked onclick="toggleTable('all')"> Visas atsauksmes
+    </label>
+    <label>
+        <input type="radio" name="tableToggle" value="high" onclick="toggleTable('high')"> 5⭐
+    </label>
+    <label>
+        <input type="radio" name="tableToggle" value="low" onclick="toggleTable('low')"> 4⭐ vai mazāk
+    </label>
+    <label>
+        <input type="radio" name="tableToggle" value="threeOrLess" onclick="toggleTable('threeOrLess')"> 3⭐ vai mazāk
+    </label>
+</div>
+
+<!-- visas ats. -->
+<div id="allTable">
+    <h3>Visas atsauksmes</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Vērtējums</th>
+                <th>Ēdiens</th>
+                <th>Dzērieni</th>
+                <th>Apkalpošana</th>
+                <th>Atmosfēra</th>
+                <th>Komentārs</th>
+                <th>Ieteikumi</th>
+                <th>Vārds</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in high_ratings + low_ratings %}
+            <tr>
+                <td>{{ item.zvaigznes }}⭐</td>
+                <td>{{ item.ediens }}</td>
+                <td>{{ item.dzeriens }}</td>
+                <td>{{ item.apkalposana }}</td>
+                <td>{{ item.atmosfera }}</td>
+                <td>{{ item.komentars }}</td>
+                <td>{{ item.ieteikumi }}</td>
+                <td>{{ item.vards }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- 5 zvaigznes -->
+<div id="highTable" style="display: none;">
+    <h3>5⭐</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Kopējais vērtējums</th>
+                <th>Ēdiens</th>
+                <th>Dzērieni</th>
+                <th>Apkalpošana</th>
+                <th>Atmosfēra</th>
+                <th>Komentārs</th>
+                <th>Ieteikumi</th>
+                <th>Vārds</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in high_ratings %}
+            <tr>
+                <td>{{ item.zvaigznes }}</td>
+                <td>{{ item.ediens }}</td>
+                <td>{{ item.dzeriens }}</td>
+                <td>{{ item.apkalposana }}</td>
+                <td>{{ item.atmosfera }}</td>
+                <td>{{ item.komentars }}</td>
+                <td>{{ item.ieteikumi }}</td>
+                <td>{{ item.vards }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- 4 vai mazak -->
+<div id="lowTable" style="display: none;">
+    <h3>4⭐ vai mazāk</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Kopējais vērtējums</th>
+                <th>Ēdiens</th>
+                <th>Dzērieni</th>
+                <th>Apkalpošana</th>
+                <th>Atmosfēra</th>
+                <th>Komentārs</th>
+                <th>Ieteikumi</th>
+                <th>Vārds</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in low_ratings %}
+            <tr>
+                <td>{{ item.zvaigznes }}</td>
+                <td>{{ item.ediens }}</td>
+                <td>{{ item.dzeriens }}</td>
+                <td>{{ item.apkalposana }}</td>
+                <td>{{ item.atmosfera }}</td>
+                <td>{{ item.komentars }}</td>
+                <td>{{ item.ieteikumi }}</td>
+                <td>{{ item.vards }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- 3 vai mazak -->
+<div id="threeOrLessTable" style="display: none;">
+    <h3>3⭐ vai mazāk</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Vērtējums</th>
+                <th>Ēdiens</th>
+                <th>Dzērieni</th>
+                <th>Apkalpošana</th>
+                <th>Atmosfēra</th>
+                <th>Komentārs</th>
+                <th>Ieteikumi</th>
+                <th>Vārds</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in low_ratings if item.zvaigznes|int <= 3 %}
+            <tr>
+                <td>{{ item.zvaigznes }}⭐</td>
+                <td>{{ item.ediens }}</td>
+                <td>{{ item.dzeriens }}</td>
+                <td>{{ item.apkalposana }}</td>
+                <td>{{ item.atmosfera }}</td>
+                <td>{{ item.komentars }}</td>
+                <td>{{ item.ieteikumi }}</td>
+                <td>{{ item.vards }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function toggleTable(table) {
+        // paslepj tab.
+        document.getElementById('allTable').style.display = 'none';
+        document.getElementById('highTable').style.display = 'none';
+        document.getElementById('lowTable').style.display = 'none';
+        document.getElementById('threeOrLessTable').style.display = 'none';
+
+        // parada konkr. tab.
+        if (table === 'all') {
+            document.getElementById('allTable').style.display = 'block';
+        } else if (table === 'high') {
+            document.getElementById('highTable').style.display = 'block';
+        } else if (table === 'low') {
+            document.getElementById('lowTable').style.display = 'block';
+        } else if (table === 'threeOrLess') {
+            document.getElementById('threeOrLessTable').style.display = 'block';
+        }
+    }
+</script>
+{% endblock %}

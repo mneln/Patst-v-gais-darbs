@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block title %}
+Vērtējums
+{% endblock %}
+{% block content %}
+<form action="/submit" method="post">
+    <p>
+        <label for="vards">Jūsu vārds:</label>
+        <input type="text" id="vards" name="vards" />
+    </p>
+    <p>
+        <label for="zvaigznes">Kopējais vērtējums:</label>
+        <input type="radio" id="zvaigznes" name="zvaigznes" value="1" />
+        <label for="zvaigznes">⭐</label>
+        <input type="radio" id="zvaigznes" name="zvaigznes" value="2" />
+        <label for="zvaigznes">⭐⭐</label>
+        <input type="radio" id="zvaigznes" name="zvaigznes" value="3" />
+        <label for="zvaigznes">⭐⭐⭐</label>
+        <input type="radio" id="zvaigznes" name="zvaigznes" value="4" />
+        <label for="zvaigznes">⭐⭐⭐⭐</label>
+        <input type="radio" id="zvaigznes" name="zvaigznes" value="5" />
+        <label for="zvaigznes">⭐⭐⭐⭐⭐</label>
+    </p>
+
+    <p>
+        <label for="vertejums">Ēdiena vērtējums:</label>
+        <input type="radio" id="vertejums" name="ediens" value="izcili" />
+        <label for="vertejums">Izcili</label>
+        <input type="radio" id="vertejums" name="ediens" value="patikami" />
+        <label for="vertejums">Patīkami</label>
+        <input type="radio" id="vertejums" name="ediens" value="pieņemami" />
+        <label for="vertejums">Pieņemami</label>
+        <input type="radio" id="vertejums" name="ediens" value="slikti" />
+        <label for="vertejums">Slikti</label>
+    </p>
+
+    <p>
+        <label for="vertejums">Dzērienu vērtējums:</label>
+        <input type="radio" id="vertejums" name="dzeriens" value="izcili" />
+        <label for="vertejums">Izcili</label>
+        <input type="radio" id="vertejums" name="dzeriens" value="patikami" />
+        <label for="vertejums">Patīkami</label>
+        <input type="radio" id="vertejums" name="dzeriens" value="pieņemami" />
+        <label for="vertejums">Pieņemami</label>
+        <input type="radio" id="vertejums" name="dzeriens" value="slikti" />
+        <label for="vertejums">Slikti</label>
+    </p>
+    <p>
+        <label for="vertejums">Apkalpošana:</label>
+        <input type="radio" id="vertejums" name="apkalposana" value="izcili" />
+        <label for="vertejums">Izcili</label>
+        <input type="radio" id="vertejums" name="apkalposana" value="patikami" />
+        <label for="vertejums">Patīkami</label>
+        <input type="radio" id="vertejums" name="apkalposana" value="pieņemami" />
+        <label for="vertejums">Pieņemami</label>
+        <input type="radio" id="vertejums" name="apkalposana" value="slikti" />
+        <label for="vertejums">Slikti</label>
+    </p>
+    <p>
+        <label for="vertejums">Atmosfēra:</label>
+        <input type="radio" id="vertejums" name="atmosfera" value="izcili" />
+        <label for="vertejums">Izcili</label>
+        <input type="radio" id="vertejums" name="atmosfera" value="patikami" />
+        <label for="vertejums">Patīkami</label>
+        <input type="radio" id="vertejums" name="atmosfera" value="pieņemami" />
+        <label for="vertejums">Pieņemami</label>
+        <input type="radio" id="vertejums" name="atmosfera" value="slikti" />
+        <label for="vertejums">Slikti</label>
+    </p>
+    
+    <p>
+        <label for="komentars">Piezīmes:</label>
+        <textarea id="komentars" name="komentars"></textarea>
+    </p>
+    <p>
+        <label for="ieteikumi">Ieteikumi:</label>
+        <textarea id="ieteikumi" name="ieteikumi"></textarea>
+    </p>
+    <p>
+        <button id="saglabat" type="submit">Saglabāt</button>
+    </p>
+</form>
+{% endblock %}

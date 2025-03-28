@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css') }}"  />
+    </head>
+
+    <body>
+        <div class="navbar">
+            <a href="{{ url_for('home') }}" class="navbar-brand {% if request.endpoint == 'home' %}active{% endif %}">Baltā pelīte!</a>
+            <a href="{{ url_for('about') }}" class="navbar-item {% if request.endpoint == 'about' %}active{% endif %}">Par uzņēmumu</a>
+            <a href="{{ url_for('review') }}" class="navbar-item {% if request.endpoint == 'review' %}active{% endif %}">Pievieno atsauksmi!</a>
+            <a href="{{ url_for('results') }}" class="navbar-item {% if request.endpoint == 'results' %}active{% endif %}">Atsauksmes</a>
+        </div>
+
+        <div class="body-content">
+            {% block content %}
+            {% endblock %}
+            <hr/>
+            <footer>
+                <p>&copy; Veidoja Loreta Tropa un Māra Nulle 12.1</p>
+            </footer>
+        </div>
+    </body>
+</html>
